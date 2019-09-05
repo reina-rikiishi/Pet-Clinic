@@ -4,8 +4,7 @@ import com.weilyuwang.petclinic.model.Owner;
 import com.weilyuwang.petclinic.model.Vet;
 import com.weilyuwang.petclinic.services.OwnerService;
 import com.weilyuwang.petclinic.services.VetService;
-import com.weilyuwang.petclinic.services.map.OwnerServiceMap;
-import com.weilyuwang.petclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +15,11 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
-
+    //inject two services
+    @Autowired //no longer required, but I'll still add it
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
