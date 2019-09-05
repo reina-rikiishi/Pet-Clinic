@@ -2,10 +2,11 @@ package com.weilyuwang.petclinic.services.map;
 
 import com.weilyuwang.petclinic.model.Vet;
 import com.weilyuwang.petclinic.services.CrudService;
+import com.weilyuwang.petclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
@@ -31,4 +32,6 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
     public void deleteById(Long id) {
         super.deleteById(id);
     }
+
+
 }
