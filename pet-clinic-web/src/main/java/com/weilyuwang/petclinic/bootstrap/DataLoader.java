@@ -20,6 +20,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService = new OwnerServiceMap();
         vetService = new VetServiceMap();
+
     }
 
     @Override
