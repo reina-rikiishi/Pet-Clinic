@@ -13,4 +13,9 @@ public class IndexController {
     public String index() {
         return "index";  //thymeleaf's gonna go back n look for a template called "index.html"
     }
+
+    @RequestMapping("/oups")
+    public String oupsHandler() {
+        return "notimplemented";
+    }
 }
