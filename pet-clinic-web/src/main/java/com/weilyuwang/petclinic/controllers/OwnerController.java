@@ -41,6 +41,7 @@ public class OwnerController {
         return "owners/findOwners";
     }
 
+
     @GetMapping
     public String proecssFindForm(Owner owner, BindingResult result, Model model) {
         //allow parameterless GET request for /owners to return all records
@@ -49,7 +50,7 @@ public class OwnerController {
         }
 
         //find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
 
         if(results.isEmpty()) {
             //no owners found
